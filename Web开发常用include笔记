@@ -1,0 +1,11 @@
+1 :包含指令包括静态包含：
+     <%@inclued file="文件路径"%> 将内容直接复制过来
+     
+2 :动态包含
+     包括传递没有参数：<jsp:include page="" fluse=""/>
+     和传递有参数：      <jsp:include  page="" fluse="true">
+                 <jsp:param name="参数名称" value = "参数内容">
+              </jsp:include>
+              
+3 :静态包含复制过来，动态包含是包含处理过的结果
+

@@ -1,0 +1,55 @@
+JavaWe开发笔记：
+              学习任何一个东西：前提都是背下来的！代码也一样，背多了，什么都会了
+1：pageContext javax.servlet.jsp.PageContext 类型       jsp的页面容器
+2：request     javax.servlet.http.HttpServletRequest 得到用户的请求信息
+3：response    javax.servlet.http.HttpServletResponse 服务器向客服端的回应消息
+4：session     javax.servlet.http.HttpSession   用来保存每一个用户的信息
+5：application javax.servlet.ServletContext   表示所有用户的共享信息
+6：config      javax.servlet.ServletConfig    服务器配置，可以取得初始化参数
+7：out         javax.servlet.jsp.JspWriter    页面输出
+8：page        java.lang.Object              表示从该页面中表示出来的一个servlet实例
+9：exception   java.lang.Throwable           表示jsp页面所发生的异常，在错误页面中起作用
+
+
+四中范围：
+page范围：通过pageConext设置，只在一个页面中保存属性跳转之后无效
+request范围：服务器跳转之后依然有效
+session范围：一次回话中，不管怎么跳转都有效，一个人的信息
+application范围：这个服务器的所有用户都有效
+
+上面的四个范围都存在下面四个方法：
+setAttribute(String name,Object o)
+getAttribute(String name)
+removeAttribute(String name)
+
+服务器端跳转：地址栏不变  jsp:forward
+客服端跳转：地址栏变  比如 a标签
+
+***能使用page范围的，就不用要request
+pageContext是可以设置四中属性范围的
+PageContext.REQUEST_SCOPE；
+PageContext.PAGE_SCOPE;
+PageContext.SESSION_SCOPE;
+PageContext.APPLICTION_SCOPE;
+
+
+
+
+1:request对象：
+  HttpServletRequest 继承：ServletRequest
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+1 :MIME类型：通过 contentType="";设置文件类型
+   contentType = "text/html";
+   contentType = "application/msword";  word下载类型
+2 : 在jsp中，如果pageEncoding编码设置存在，则有pageEncoding属性值决定,而如果不存在则由
+    charset来决定，如果都不在，则默认显示ISO8895-1
+3 :错误页设置 两种方式： 
+   (1) page属性里面 errorPage="错误提示页面.jsp";然后在错误提示页面设置 isErrorPage="true";
+   (2)通过配置web.xml中的
+            <errorPage>
+                <error-code></error-code>
+                <location></location>
+            </errorPage>   
+4: page 指令可以指定MIME类型也可以进行页面乱码解决
+       可以通过Page指令进行错误的跳转
+       可以使用page指令在程序中导入java.sql包，并进行数据库操作     
+   
