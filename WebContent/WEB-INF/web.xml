@@ -30,5 +30,25 @@
      <exception-type>java.lang.ArithmeticException</exception-type>
      <location>/error2.jsp</location>
   </error-page>
-  
+  <!--安全约束  -->
+ <security-constraint>
+       <web-resource-collection>
+           <web-resource-name>RegisterUsers</web-resource-name>
+           <url-pattern>/WebDemo/security.jsp</url-pattern>
+       </web-resource-collection>
+       <auth-constraint>
+          <role-name>zlmuser</role-name>
+          <role-name>admin</role-name>
+       </auth-constraint>
+ </security-constraint>
+  <login-config>
+     <auth-method>BASIC</auth-method>
+     <realm-name>Register User</realm-name>
+  </login-config>
+  <security-role>
+      <role-name>zlmuser</role-name>
+  </security-role>
+  <security-role>
+     <role-name>admin</role-name>
+  </security-role>
 </web-app>

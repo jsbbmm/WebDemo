@@ -35,11 +35,35 @@ PageContext.APPLICTION_SCOPE;
 
 
 
-1:request对象：
-  HttpServletRequest 继承：ServletRequest
+1:request对象：主要用来接收客服端发送过来的请求信息
+	  request.setCharacterEncoding("gbk");解决百分之八十的乱码问题
+	  HttpServletRequest 继承：ServletRequest
+	  request可以获取表单传递过来也可以通过地址重写传递过来
+	     表单提交方式：get:地址栏会显示参数内容   post：地址栏不会改变
+	     因为地址栏长度是有限制的，所以表单提交尽量都用post方式
+	    直接输入地址属于get方式提交
+	  String path = request.getServletPath();
+	  String contextPath 
+	  <h3>上下文路径<%=contextPath %></h3>
+	  <h3>一个页面的完整路径：<%=contextPath %><%=path %></h3>  
+              如果使用getAttribute(),之前一定存在setAttribute()操作
+             如果使用getParamter(),存在以下几种情况：
+    1，表单提交, 2，地址重写，3，通过<jsp:include><jsp:forward>传递而来的参数
+    
+2:response对象：服务器对客服端的回应，将web服务器处理后的结果发给客服端
+    javax.servlet.http.HttpServletResopnse接口实例
+          非常重要的三个方法：addCookie(Cookie cookie), setHeader(String name)
+          地址栏变了就属于客服端跳转了，客服端跳转就无法传递request属性范围内容的东西了
+          地址栏不变就属性服务器端跳转了
+    response.sendRedirect():属于客服端跳转，跳转之后不传递request属性了
+    <jsp:forward>属性服务器端跳转
+3：Cookie    setMaxAge（）设置cookie生命周期
 
-
-
+4： session  :javax.servlet.http.HttpSession 接口 
+     涉及的主要方法：getId(),getCreationTime(),getLastAccessedtime(),
+             isNew(),invalidate(),getAttributenames();          
+    
+    
 
 
 
